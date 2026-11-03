@@ -16,15 +16,14 @@ This is an independent exercise made by me after the "Introduction to MS SQL" mo
 
 I did it because I wanted to focus more on the SQL and queries part and felt the module's exercise wasn't enough.
 
-normalization.md explains some design decisions. [3NF notes](docs/normalization.md)
+normalization.md explains some design decisions.
+
+
+er\_diagram\_draft.png shows the er diagram made before writing any query. 
 
 
 
-er\_diagram\_draft.png shows the er diagram made before writing any query. !\[ER diagram](docs/er\_diagram\_draft.png)
-
-
-
-powerbi\_model shows the er diagram in power bi !\[Power BI ER diagram](docs/powerbi\_model.png)
+powerbi\_model shows the er diagram in power bi 
 
 
 
