@@ -4,13 +4,15 @@
 
 Each table meets 3NF because every non-key column depends only on the PK, on the whole PK, and on nothing but the PK
 
+## Table by table
 
-
-| Employee | EmployeeID | BossID, Name, Surname | EmployeeID | Yes: all columns describe the employee itself. BossID is a foreign key to the boss's EmployeeID, and no non-key column determines another. |
+| Table | Key | Non-key columns | Depends on | Meets 3NF? Why |
+|---|---|---|---|---|
+| Employee | EmployeeID | BossID, Name, Surname | EmployeeID | Yes: all columns describe the employee itself. BossID is a foreign key to the boss's EmployeeID. |
 | Client | ClientID | Name, Surname, Email | ClientID | Yes: all columns describe the client. Email is UNIQUE and NOT NULL, so it is a candidate key and depending on it does not break 3NF. |
 | Service | ServiceID | Name, Price | ServiceID | Yes: both columns describe the service in the catalog (Price is the current catalog price). |
-| Visit | VisitID | EmployeeID, ClientID, VisitDate | VisitID | Yes: all columns describe this visit. Only foreign keys are stored, not the employee's or client's data, so there is no transitive dependency. |
-| VisitService | VisitID, ServiceID | Price | The whole key (VisitID + ServiceID) | Yes: Price is the amount charged for that service in that visit. The same service can be charged at different prices in different visits (in the seed data, Haircut is charged 25 in visit 1 while the catalog price is 20), so it depends on the whole key, not on ServiceID alone. |
+| Visit | VisitID | EmployeeID, ClientID, VisitDate | VisitID | Yes: all columns describe this visit. Only foreign keys are stored, so there is no transitive dependency. |
+| VisitService | VisitID, ServiceID | Price | The whole key (VisitID + ServiceID) | Yes: Price is the amount charged for that service in that visit. In the seed data, Haircut is charged 25 in visit 1 while the catalog price is 20, so it depends on the whole key, not on ServiceID alone. |
 
 ## 
 
